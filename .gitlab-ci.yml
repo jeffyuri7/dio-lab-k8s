@@ -39,6 +39,6 @@ deploy_dev:
   needs:
     - build_images
   before_script:
-    - chmod 400 $SSH_PASS
+    - chmod 400 $SSH_KEY
   script:
     - ssh -o StrictHostKeyChecking=no -i $SSH_KEY gcp@35.198.57.187 "sudo git clone --branch kubernetes https://gitlab.com/denilsonbonatti/gitlab-cicd-app-base.git && cd gitlab-cicd-app-base && ls"
