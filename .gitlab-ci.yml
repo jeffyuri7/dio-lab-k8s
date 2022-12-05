@@ -41,5 +41,4 @@ deploy_dev:
   tags:
     - gcp
   script:
-    - sudo su
     - su -c "kubectl get nodes" -s /bin/bash gcp
