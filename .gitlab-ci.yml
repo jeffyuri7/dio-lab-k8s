@@ -33,6 +33,7 @@ build_images:
   script:
     - docker build -t denilsonbonatti/gitlab-cicd-node:1.0 .
     - docker push denilsonbonatti/gitlab-cicd-node:1.0
+    - scp script.sh -i $SSH_KEY gcp@35.198.57.187:/home
 
 deploy_dev:
   stage: deploy
@@ -41,4 +42,4 @@ deploy_dev:
   tags:
     - gcp
   script:
-    - kubectl apply -f deployment.yml
+    - docker run -d --name nodeapp -p 3000:3000 denilsonbonatti/gitlab-cicd-node:1.0
