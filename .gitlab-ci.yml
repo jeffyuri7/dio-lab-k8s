@@ -32,4 +32,4 @@ build_images:
   script:
     - docker build -t denilsonbonatti/gitlab-cicd-node:1.0 .
     - docker push denilsonbonatti/gitlab-cicd-node:1.0
-    - scp script.sh -i $SSH_KEY gcp@35.198.57.187:/home
+    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY gcp@35.198.57.187 "ls"
