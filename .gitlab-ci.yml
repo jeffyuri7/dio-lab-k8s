@@ -41,4 +41,4 @@ deploy_dev:
   tags:
     - gcp
   script:
-    - kubectl apply -f deployment.yml
+    - sudo kubectl apply -f deployment.yml
