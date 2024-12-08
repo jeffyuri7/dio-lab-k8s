@@ -19,19 +19,18 @@ metadata:
   labels:
     app: app
 spec:
-  replicas: 5
+  replicas: 6
   selector:
     matchLabels:
       app: app
   template:
     metadata:
-      app: app
-  spec: 
-    containers:
-    - name: app
-    image: denilsonbonatti/gitlab-cicd-node:1.0
-    imagePullPolice: Always
-    ports: 
-    - containerPort: 3000
-
-
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: jeffyuri/dio-lab-k8s:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
