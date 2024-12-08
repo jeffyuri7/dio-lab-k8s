@@ -19,12 +19,17 @@ metadata:
   labels:
     app: app
 spec:
+<<<<<<< HEAD
   replicas: 5
+=======
+  replicas: 6
+>>>>>>> kubernetes
   selector:
     matchLabels:
       app: app
   template:
     metadata:
+<<<<<<< HEAD
       app: app
   spec: 
     containers:
@@ -35,3 +40,14 @@ spec:
     - containerPort: 3000
 
 
+=======
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: jeffyuri/dio-lab-k8s:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+>>>>>>> kubernetes
